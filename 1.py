@@ -32,7 +32,7 @@ letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 print(letters[1])
 
 
-#6
+# 6
 # Question: Please complete the script so that it prints out a list slice containing items d , e , and f .
 
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
@@ -40,3 +40,10 @@ letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 
 # ['d', 'e', 'f'] 
 print(letters[3:6])
+
+# 7
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+# Expected output: 
+
+# ['a', 'b', 'c'] 
+print(letters[:3])
