@@ -47,3 +47,11 @@ letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 
 # ['a', 'b', 'c'] 
 print(letters[:3])
+
+# 8 Question: Complete the script so that it prints out letter i  using negative indexing.
+
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+# Expected output: 
+
+# i 
+print(letters[-2])
