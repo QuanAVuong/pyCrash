@@ -71,3 +71,7 @@ letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 
 # ['a', 'c', 'e', 'g', 'i'] 
 print(letters[0::2])
+
+# 11 Create a script that generates and prints a list of numbers from 1 to 20. Please do not create the list manually.
+print(list(range(1, 21)))
+
