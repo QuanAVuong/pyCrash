@@ -63,3 +63,11 @@ letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 
 # ['h', 'i', 'j'] 
 print(letters[-3:])
+
+# 10 Question: Complete the script so that it prints out a list slice containing letters a, c, e, g, and i. 
+# 2 points
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+# Expected output: 
+
+# ['a', 'c', 'e', 'g', 'i'] 
+print(letters[0::2])
