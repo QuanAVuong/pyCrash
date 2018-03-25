@@ -187,3 +187,4 @@ d = {"a": 1, "b": 2, "c": 3}
 # {'a': 1}  
 print(dict((key, value) for key, value in d.items() if value <= 1))
 print({key: value for key, value in d.items() if value <= 1})
+print({key: d[key] for key in d if d[key] <= 1}) # without items()
