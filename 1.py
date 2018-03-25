@@ -93,3 +93,34 @@ my_range = range(1, 21)
 print([str(num) for num in my_range]) # list comprehension
 print(list(map(str, my_range))) # map function
 
+
+# 14 Complete the script so that it removes duplicate items from list a .
+
+# Expected output: 
+#   ['1', 2, 1] 
+
+from collections import OrderedDict # 2.1 preserving order
+a = ["1", 1, "1", 2]
+
+print("This list made from a set is unique but does not preserve order: " + str(list(set(a)))) # 1. order not preserved
+print("Preserving order with OrderedDict.fromkeys(a): " + str(list(OrderedDict.fromkeys(a)))) # 2.1
+
+# 2.2 Preserve order by appending another list:
+b = []
+for elem in a:
+    if elem not in b:
+        b.append(elem)
+print("Regular for => if => append" + str(b))
+
+b = []
+list(map(lambda elem: b.append(elem) if elem not in b else False, a ))
+print("ternary lambda: " + str(b)) # => [None, None, False, None]
+
+# the operation b.extend (from b.extend([elem for elem in a if elem not in b])) happens after generating the list from list-comprehention, while that specific b.append (from [b.append(elem) for elem in a if elem not in b])  is activelly appending to b while checking if it already contains something from a, and not appending it if it does
+b = []
+b.extend([elem for elem in a if elem not in b]) # => ['1', 1, '1', 2]
+print("extend() makes a copy: " + str(b))
+
+b = []
+[b.append(elem) for elem in a if elem not in b]
+print("List comprehension: [append.. for.. if..]" + str(b))
