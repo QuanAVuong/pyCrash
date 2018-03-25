@@ -124,3 +124,10 @@ print("extend() makes a copy: " + str(b))
 b = []
 [b.append(elem) for elem in a if elem not in b]
 print("List comprehension: [append.. for.. if..]" + str(b))
+
+
+# 15 Create a dictionary that contains the keys a  and b  and their respective values 1  and 2 .
+d1 = {"a": 1, "b": 2}
+d2 = dict(a=1, b=2)
+print(d1, d2)
+
