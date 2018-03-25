@@ -164,3 +164,17 @@ d = {"a": 1, "b": 2}
 
 d["c"] = 3
 print(d)
+
+
+# 20 Calculate the sum of all dictionary values.
+
+d = {"a": 1, "b": 2, "c": 3}
+# Expected output: 
+#  6 
+s = 0
+for num in list(d.values()):
+    s += num
+print(s)
+
+#d.values()  returns a list-like dict_values  object while the sum  function calculates the sum of the dict_values  items.
+print(sum(d.values()))
