@@ -178,3 +178,12 @@ print(s)
 
 #d.values()  returns a list-like dict_values  object while the sum  function calculates the sum of the dict_values  items.
 print(sum(d.values()))
+
+
+# 21 Filter the dictionary by removing all items with a value of greater than 1.
+
+d = {"a": 1, "b": 2, "c": 3}
+# Expected output: 
+# {'a': 1}  
+print(dict((key, value) for key, value in d.items() if value <= 1))
+print({key: value for key, value in d.items() if value <= 1})
