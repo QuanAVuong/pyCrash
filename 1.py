@@ -188,3 +188,14 @@ d = {"a": 1, "b": 2, "c": 3}
 print(dict((key, value) for key, value in d.items() if value <= 1))
 print({key: value for key, value in d.items() if value <= 1})
 print({key: d[key] for key in d if d[key] <= 1}) # without items()
+
+
+# 22 Create a dictionary of keys a, b, c where each key has as value a list from 1 to 10, 11 to 20, and 21 to 30 respectively. Then print out the dictionary in a nice format.
+d = {"a": list(range(1, 11)),
+    "b": list(range(11, 21)),
+    "c": list(range(21, 31))}
+print(d)
+# use dict() and pprint
+from pprint import pprint
+d = dict(a = list(range(1, 11)), b = list(range(11, 21)), c = list(range(21, 31)))
+pprint(d)
