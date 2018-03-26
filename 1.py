@@ -284,3 +284,12 @@ def liquid_volume(h, r=10):
     return (( 4 * pi * r**3 ) / 3) - (pi * h**2 * (3*r - h) / 3 )
 
 print(liquid_volume(2))
+
+
+# 30 Why do you get an error and how would you fix it?
+
+# def foo(a=2, b): # SyntaxError: non-default argument follows default argument
+def foo(b, a=2):
+    return a + b
+print(foo(5))
+
