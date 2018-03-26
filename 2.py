@@ -146,3 +146,9 @@ import math
 print(math.cos(1)) 
 # Expected output:
 # 0.5403023058681397          
+
+
+# 40 Please try to guess what is missing in the following code and add the missing part so that the code works fine.
+import math
+# print(math.pow(2)) # TypeError: pow expected 2 arguments, got 1
+print(math.pow(2, 3)) # => 8.0
