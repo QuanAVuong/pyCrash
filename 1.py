@@ -232,3 +232,19 @@ d = dict(a = list(range(1, 11)), b = list(range(11, 21)), c = list(range(21, 31)
 # 25 Make a script that prints out letters of English alphabet from a to z, one letter per line in the terminal.
 import string
 [ print(char) for char in string.ascii_lowercase ]
+
+
+# 26 Make a script that prints out numbers from 1 to 10
+# Expected output:
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
+
+[print(num) for num in range(1, 11)]
