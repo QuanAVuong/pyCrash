@@ -121,3 +121,12 @@ def file_word_count(filepath):
         return len(string_list)
 
 print(file_word_count("36.txt"))
+
+
+# 37 Create a function that takes a text file as input and returns the number of words contained in the text file. Please take into consideration that some words can be separated by a comma with no space. For example "Hi,it's me." would need to be counted as three words. 
+def file_word_count2(filepath):
+    with open(filepath, "r") as file:
+        string_list = file.read().replace(",", " ").split()
+        return len(string_list)
+
+print(file_word_count2("37.txt"))
