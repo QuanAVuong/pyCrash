@@ -261,3 +261,14 @@ def accel(v1=0, v2=0, t1=0, t2=0):
     "a = ({v2} -{v1})/({t2} - {t1})\n".format(v1=v1,v2=v2,t1=t1,t2=t2),
     "a = " + str((v2 -v1)/(t2 - t1)))
 accel(0, 10, 0, 20)
+
+
+# 28 Why is there an error in the code and how would you fix it?
+
+def foo(a, b):
+    # print(a + b)  # needs to return something
+    return a + b
+
+x = foo(2, 3) * 10 # TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
+print(x)
+
