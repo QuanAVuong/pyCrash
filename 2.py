@@ -74,3 +74,13 @@ def foo():
     return c
 c = 3 # c set to 3
 print(foo()) # => 3
+
+
+# 33 Here's another similar exercise. What will the following script output? Try to do this mentally if you can.
+
+c = 1
+def foo():
+    c = 2   # local c set to 2
+    return c
+c = 3
+print(foo()) # returning foo's local c => 2
