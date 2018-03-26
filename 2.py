@@ -97,3 +97,10 @@ foo()
 print(c) # NameError: name 'c' is not defined
 # Expected output:
 # 1 
+
+
+# 35 Create a function that takes any string as input and returns the number of words for that string.
+def word_count(s):
+    return len(list(s.split()))
+
+print(word_count("How many words are these?"))
