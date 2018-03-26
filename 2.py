@@ -84,3 +84,16 @@ def foo():
     return c
 c = 3
 print(foo()) # returning foo's local c => 2
+
+
+# 34 The following script throws a NameError  in the last line saying that c  is not defined. Please fix the function so that there is no error and the last line is able to print out the value of c  (i.e. 1 ).
+# c = 1
+def foo(): 
+    # c = 1     # need to move local c to global scope
+    global c    # makes c available in the global namespace
+    c = 1       # need to set c, else NameError: name 'c' is not defined
+    return c 
+foo() 
+print(c) # NameError: name 'c' is not defined
+# Expected output:
+# 1 
