@@ -65,3 +65,12 @@ def foo(a=1, b=2):
 
 x = foo() - 1 # TypeError: unsupported operand type(s) for -: 'function' and 'int'
 print(x)
+
+
+# 32 What will the following script output? Please try to do this mentally if you can.
+
+c = 1 # c set to 1
+def foo():
+    return c
+c = 3 # c set to 3
+print(foo()) # => 3
