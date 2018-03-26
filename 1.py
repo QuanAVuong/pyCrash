@@ -228,3 +228,7 @@ d = dict(a = list(range(1, 11)), b = list(range(11, 21)), c = list(range(21, 31)
 {pprint(key + " has value " + str(value)) for key, value in d.items()} # with items()
 {print(key, " has value ", str(d[key])) for key in d} # without items(), "+""
 
+
+# 25 Make a script that prints out letters of English alphabet from a to z, one letter per line in the terminal.
+import string
+[ print(char) for char in string.ascii_lowercase ]
