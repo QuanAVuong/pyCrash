@@ -248,3 +248,16 @@ import string
 # 10
 
 [print(num) for num in range(1, 11)]
+
+
+# 27 Create a function that calculates acceleration given initial velocity v1, final velocity v2, start time t1, and end time t2. The formula for acceleration is: a = delta v / delta t
+# To test your solution, call the function by inputting values 0, 10, 0, 20 for v1, v2, t1, and t2 respectively, and you should get the expected output.
+
+# Expected output:
+# 0.5
+def accel(v1=0, v2=0, t1=0, t2=0):
+    print("a = delta v / delta t\n",
+    "a = (v2 -v1)/(t2 - t1)\n",
+    "a = ({v2} -{v1})/({t2} - {t1})\n".format(v1=v1,v2=v2,t1=t1,t2=t2),
+    "a = " + str((v2 -v1)/(t2 - t1)))
+accel(0, 10, 0, 20)
