@@ -104,3 +104,20 @@ def word_count(s):
     return len(list(s.split()))
 
 print(word_count("How many words are these?"))
+
+
+# 36 Create a Python function that takes a text file as input and returns the number of words contained in the text file.
+# Expected output:
+# 10 
+def file_word_count(filepath):
+    # With the "With" statement, you get better syntax and exceptions handling. 
+    # "The with statement simplifies exception handling by encapsulating common
+    # preparation and cleanup tasks."
+    # In addition, it will automatically close the file. The with statement provides
+    # a way for ensuring that a clean-up is always used.
+    with open(filepath, "r") as file:
+        read_string = file.read()
+        string_list = read_string.split()
+        return len(string_list)
+
+print(file_word_count("36.txt"))
