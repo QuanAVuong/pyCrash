@@ -152,3 +152,12 @@ print(math.cos(1))
 import math
 # print(math.pow(2)) # TypeError: pow expected 2 arguments, got 1
 print(math.pow(2, 3)) # => 8.0
+
+
+# 41 
+import string
+
+with open("41.txt", "w") as file:
+    for letter in string.ascii_lowercase:
+        file.write(letter + "\n")
+        
