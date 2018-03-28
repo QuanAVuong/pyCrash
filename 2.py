@@ -220,3 +220,31 @@ with open("44.txt", "w") as file:
                                         string.ascii_lowercase[1::3],
                                         string.ascii_lowercase[2::3]):
         file.write(letter1 + letter2 + letter3 + "\n")
+
+
+# 45 Please create a script that generates 26 text files named a.txt, b.txt, and so on up to z.txt. Each file should contain a letter reflecting its filename. So, a.txt will contain letter a, b.txt will contain letter b and so on.
+import string, os, errno
+# https://stackoverflow.com/questions/273192/how-can-i-create-a-directory-if-it-does-not-exist
+try:
+    os.makedirs("45")
+except OSError as e:
+    if e.errno != errno.EEXIST:
+        raise
+
+# for dirpath, dirnames, filenames in os.walk(os.getcwd()):
+#     # print(dirpath)
+#     print(dirnames)
+#     # print(filenames)
+
+for letter in string.ascii_lowercase:
+    with open(os.path.join(os.getcwd(), "45", "{}.txt".format(letter)),
+        "w") as file:
+        file.write(str(letter))
+
+# alternatively:
+if not os.path.exists("45-2"):
+    os.makedirs("45-2")
+for letter in string.ascii_lowercase:
+    with open("45-2/" + letter + ".txt", "w") as file:
+        file.write(letter)
+
