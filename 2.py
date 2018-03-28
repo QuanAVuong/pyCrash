@@ -189,3 +189,19 @@ b = (4, 5, 6)
 # Returns an iterator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables. The iterator stops when the shortest input iterable is exhausted. With a single iterable argument, it returns an iterator of 1-tuples. With no arguments, it returns an empty iterator. 
 for numa, numb in zip(a, b):
     print(numa + numb)
+
+
+# 43 Create a script that generates a file where all letters of English alphabet are listed two in each line. The inside of the text file would look like:
+
+# ab
+# cd
+# ef
+
+# and so on.
+import string
+with open("43.txt", "w") as file:
+    # even = [letter for letter in string.ascii_lowercase if list(string.ascii_lowercase).index(letter) % 2 == 0 ]
+    # odd = [letter for letter in string.ascii_lowercase if list(string.ascii_lowercase).index(letter) % 2 == 1 ]
+    # [print(letter) for letter in zip(even, odd)]
+    for letter1, letter2 in zip(string.ascii_lowercase[0::2],string.ascii_lowercase[1::2]):
+        file.write(letter1 + letter2 + "\n")
