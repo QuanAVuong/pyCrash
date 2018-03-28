@@ -154,10 +154,38 @@ import math
 print(math.pow(2, 3)) # => 8.0
 
 
-# 41 
+# 41 Create a script that generates a text file with all letters of English alphabet inside it, one letter per line.
 import string
 
 with open("41.txt", "w") as file:
     for letter in string.ascii_lowercase:
         file.write(letter + "\n")
-        
+
+
+# 42 print out in each line the sum of homologous items of the two sequences.
+
+a = [1, 2, 3]
+b = (4, 5, 6)
+# Expected output: 
+# 5
+# 7
+# 9
+
+# for indexa, itema in enumerate(a):
+#     for indexb, itemb in enumerate(b):
+#         print(itema + itemb)
+# => 5
+# 6
+# 7
+# 6
+# 7
+# 8
+# 7
+# 8
+# 9
+# zip(*iterables)
+# Make an iterator that aggregates elements from each of the iterables.
+
+# Returns an iterator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables. The iterator stops when the shortest input iterable is exhausted. With a single iterable argument, it returns an iterator of 1-tuples. With no arguments, it returns an empty iterator. 
+for numa, numb in zip(a, b):
+    print(numa + numb)
