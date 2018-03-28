@@ -248,3 +248,20 @@ for letter in string.ascii_lowercase:
     with open("45-2/" + letter + ".txt", "w") as file:
         file.write(letter)
 
+
+# 46 Write a script that extracts letters from the 26 text files and put the letters in a list
+import os
+dir_45 = os.walk(os.path.join(os.getcwd(), "45"))
+extracted = []
+for dirpath, dirnames, filenames in dir_45:
+    for file_name in filenames: 
+        with open(os.path.join("45/", file_name), "r") as file:
+            extracted.append(file.read())
+print(extracted)
+
+import glob
+extracted2 = []
+for file_name in glob.glob("45/*"):
+    with open(file_name, "r") as file:
+        extracted2.append(file.read())
+print(extracted2)
