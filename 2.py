@@ -205,3 +205,18 @@ with open("43.txt", "w") as file:
     # [print(letter) for letter in zip(even, odd)]
     for letter1, letter2 in zip(string.ascii_lowercase[0::2],string.ascii_lowercase[1::2]):
         file.write(letter1 + letter2 + "\n")
+
+
+# 44 Create a script that generates a file where all letters of English alphabet are listed three in each line. The inside of the text file would look like:
+
+# abc
+# def
+# ghi
+
+# and so on.
+import string
+with open("44.txt", "w") as file:
+    for letter1, letter2, letter3 in zip(string.ascii_lowercase[0::3],
+                                        string.ascii_lowercase[1::3],
+                                        string.ascii_lowercase[2::3]):
+        file.write(letter1 + letter2 + letter3 + "\n")
