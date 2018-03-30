@@ -265,3 +265,17 @@ for file_name in glob.glob("45/*"):
     with open(file_name, "r") as file:
         extracted2.append(file.read())
 print(extracted2)
+
+
+# 47 Create a script that iterates through text files and checks if strings p, y, t, h, o, or n are found in the content of the text file. If any of those strings is found, append that string to a list.
+import glob
+check = "python"
+python_list = []
+
+for file_name in glob.glob("45/*"):
+    with open(file_name, "r") as file:
+        content = file.read().strip()
+        if content in check:        # strip() removes whitespace by default
+            python_list.append(content)
+print(python_list)
+
