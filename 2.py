@@ -279,3 +279,15 @@ for file_name in glob.glob("45/*"):
             python_list.append(content)
 print(python_list)
 
+
+
+# 48 The script is supposed to print out letter "e" if the letter is in string "Hello", but it doesn't. Please try to fix the script.
+
+for letter in "Hello":
+    if letter == "e":
+    # print(letter) # IndentationError: expected an indented block
+        print(letter)
+# Expected output:
+# e 
+
+
