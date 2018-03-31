@@ -78,3 +78,15 @@ d = {"employees":[{"firstName": "John", "lastName": "Doe"},
 
 with open("56.json", "w") as file:
     json.dump(d, file, indent=4, sort_keys=True)
+
+
+# 57 Print out 56.json content
+import json
+from pprint import pprint # sometimes import <moduleName> alone won't work
+
+with open("56.json", "r") as file:
+    # pprint(json.load(file))       # TypeError: 'module' object is not callable
+    # pprint(json.loads(file.read())) # TypeError: 'module' object is not callable
+    d = json.loads(file.read())     # json.loads() gets a string as output and creates a dictionary object out of that.
+
+pprint(d)
