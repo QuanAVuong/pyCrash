@@ -116,3 +116,10 @@ a = [1, 2, 3]
 
 for index, value in list(enumerate(a)) :
     print("Item %s has index %s" % (value, index))
+
+
+
+# 60 Prints hello repeatedly, non-stop
+while True:
+    print("Hello")
+    
