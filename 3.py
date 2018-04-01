@@ -177,3 +177,18 @@ while timer <= 3:
     timer += 1
     time.sleep(timer)
 print("End of the Loop")
+
+
+
+# 64 The following code prints Hello, checks if 2 is greater than 1 and then breaks the loop because 2 is actually greater than 1. Therefore Hi is not printed out. Please replace break with something else so that Hello and Hi are printed out repeatedly.
+import time
+
+while True:
+    print("First statement")
+    if 2 > 1:
+        # break     # break out of the loop
+        # pass
+        "do something"
+    print("Second Statement")
+    time.sleep(1)
+
