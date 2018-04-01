@@ -198,10 +198,10 @@ import time
 
 while True:
     print("First statement")
+    time.sleep(1)
     if 2 > 1:
         # break         # break out of the loop
         # pass          # pass on to the next line
-        continue        # continue continues with the loop, opposite of break
+        continue        # continue continues with the beginning of the loop, opposite of break
     print("Second Statement")
-    time.sleep(1)
 
