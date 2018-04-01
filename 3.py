@@ -105,3 +105,14 @@ with open("56.json", "r+") as file:     # "+" write mode
     file.truncate()     # delete everything after current cursor position (end of dumped dictionary)
 
 
+# 59 Please complete the code so that it prints out the expected output.
+
+a = [1, 2, 3] 
+
+# Expected output: 
+# Item 1 has index 0
+# Item 2 has index 1
+# Item 3 has index 2
+
+for index, value in list(enumerate(a)) :
+    print("Item %s has index %s" % (value, index))
