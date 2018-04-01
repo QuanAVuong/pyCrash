@@ -160,3 +160,20 @@ while True:
     timer += 1
     print(timer)
     time.sleep(timer)
+
+
+# 63  Create a program that once executed the programs prints Hello  instantly first, then it prints it after 1 second, then after 2, 3, and then the program prints out the message "End of the Loop" and stops.
+
+# Expected output: 
+# Hello
+# Hello
+# Hello
+# Hello
+# End of Loop
+import time
+timer = 1
+while timer <= 3:
+    print("Printing 'Hello' after {0} {1}: Hello ".format(timer, "second" if timer <= 1 else "seconds"))
+    timer += 1
+    time.sleep(timer)
+print("End of the Loop")
