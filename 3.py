@@ -90,3 +90,18 @@ with open("56.json", "r") as file:
     d = json.loads(file.read())     # json.loads() gets a string as output and creates a dictionary object out of that.
 
 pprint(d)
+
+
+# 58 add a new employee to the content of "56.json"
+import json
+
+with open("56.json", "r+") as file:     # "+" write mode
+    d = json.loads(file.read())         # 
+    d["employees"].append({
+        "firstName": "Albert",
+        "lastName": "Bert"})
+    file.seek(0)        # move cursor to start of file
+    json.dump(d, file, indent=4, sort_keys=True)
+    file.truncate()     # delete everything after current cursor position (end of dumped dictionary)
+
+
