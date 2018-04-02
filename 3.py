@@ -205,3 +205,18 @@ while True:
         continue        # continue continues with the beginning of the loop, opposite of break
     print("Second Statement")
 
+
+# 66 Create an English to Portuguese translation program.
+# The program takes a word from the user as input and translates it using the following dictionary as a vocabulary source.
+
+d = dict(weather = "clima", earth = "terra", rain = "chuva") 
+
+# Expected output: 
+# Enter word: earth
+# terra
+def engToPor():
+    word = input("What word from our dictionary would you like to be translated:")
+    # print("{} means ".format(word) + {value for key, value in d.items() if key == word})      # => earth means {'terra'}
+    { print("{} is ".format(word) + value) for key, value in d.items() if key == word }        # => earth means terra
+
+engToPor()
