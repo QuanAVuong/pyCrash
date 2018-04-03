@@ -295,3 +295,11 @@ response = requests.get("http://www.pythonhow.com/data/universe.txt")
 # [ a_count.append(letter) for letter in response.text if letter == "a" ]
 # print(len(a_count))
 print(response.text.count("a"))     # using str.count()
+
+
+# 72 Create a script that let the user type in a search term and then the program opens the browser and searches the term on Google.
+import webbrowser
+
+search_query = input("Please enter your search term(s): ")
+url = f"https://encrypted.google.com/search?hl=en&q={search_query}"
+webbrowser.open(url, new=2, autoraise=True)
