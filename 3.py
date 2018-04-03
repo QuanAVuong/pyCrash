@@ -240,3 +240,18 @@ def engToPor2():
     print(f"{word} is {d[word]} in Portuguese" if word in d else raise ValidationError(f"{word} not found."))       # => invalid syntax raise raises an exception which is a statement, not an expression that returns a value
     print(f"{word} is {d[word]} in Portuguese" if word in d else "Error: not found.")
 engToPor2()
+
+
+# 68 Also, make the program non case-sensitive meaning that for example, both earth and Earth should return the translation correctly for that word.
+
+d = dict(weather = "clima", earth = "terra", rain = "chuva") 
+
+# Expected output: 
+# Enter word: hello
+# We couldn't find that word!
+
+def engToPor3():
+    word = input("Enter English word (case-insensitive): ").lower()
+    print(f"{word} is {d[word]} in Portuguese" if word in d else "Error: not found.")
+
+engToPor3()
