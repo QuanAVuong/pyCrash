@@ -310,3 +310,26 @@ import pandas
 data = pandas.read_csv("http://www.pythonhow.com/data/sampledata.txt")
 data_x2 = data * 2
 data_x2.to_csv("73.txt", index=None)
+
+
+# 74 Please concatenate 74.txt with 73.txt to a single text file. The content of the output file should look like below.
+
+# Expected output: 
+# x,y
+# 3,5
+# 4,9
+# 6,10
+# 7,11
+# 8,12
+# 6,10
+# 8,18
+# 12,20
+# 14,22
+# 16,24
+
+import pandas as p
+
+df1 = p.read_csv("74.txt")
+df2 = p.read_csv("73.txt")
+df_12 = p.concat([df1, df2])
+df_12.to_csv("74-concat.txt", index=None)
