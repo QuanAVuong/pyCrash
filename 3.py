@@ -269,3 +269,15 @@ print(r.text[:100])
 # <!DOCTYPE html>
 # <!--[if IE 7]>
 # <html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+
+
+# 70 
+# Print out the text of this file http://www.pythonhow.com/data/universe.txt. Please don't manually download the file. Let Python do all the work.
+# Expected output: 
+# Distant regions of space are assumed to exist and to be part of reality as much as we are, even though we can never
+# interact with them... Typically, the observable universe is taken to mean the portion of the Universe that
+# is observable from our vantage point in the Milky Way.
+import requests
+
+response = requests.get("http://www.pythonhow.com/data/universe.txt")
+print(response.text)
