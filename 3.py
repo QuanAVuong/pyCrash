@@ -220,3 +220,23 @@ def engToPor():
     { print("{} is ".format(word) + value) for key, value in d.items() if key == word }        # => earth means terra
 
 engToPor()
+
+
+# 67 Create an English to Portuguese translation program.
+# The program takes a word from the user as input and translates it using the following dictionary as a vocabulary source. In addition, try to return the message "We couldn't find that word!" when the user enters a word that is not in the dictionary.
+
+d = dict(weather = "clima", earth = "terra", rain = "chuva") 
+
+# Expected output: 
+
+# Enter word: hello
+# We couldn't find that word!
+def engToPor2():
+    word = input("Please enter an english word to be translated to portuguese: ")
+    # { print("{} is {} in Portuguese".format(word, value)) if key == word else print("We couldn't find that word!") for key, value in d.items() if key == word }     # else clause won't run as key == word already always true
+    # { print("{} is {} in Portuguese".format(word, value)) if key == word else print("We couldn't find that word!") for key, value in d.items()}     # => will run true/false statements for ALL key,value pairs
+
+    # non-comprehension / ternary cleaner
+    print(f"{word} is {d[word]} in Portuguese" if word in d else raise ValidationError(f"{word} not found."))       # => invalid syntax raise raises an exception which is a statement, not an expression that returns a value
+    print(f"{word} is {d[word]} in Portuguese" if word in d else "Error: not found.")
+engToPor2()
