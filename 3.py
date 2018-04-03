@@ -303,3 +303,10 @@ import webbrowser
 search_query = input("Please enter your search term(s): ")
 url = f"https://encrypted.google.com/search?hl=en&q={search_query}"
 webbrowser.open(url, new=2, autoraise=True)
+
+
+# 73 Create a script that reads http://www.pythonhow.com/data/sampledata.txt file, multiplies its values by two and saves the output in a new text file.
+import pandas
+data = pandas.read_csv("http://www.pythonhow.com/data/sampledata.txt")
+data_x2 = data * 2
+data_x2.to_csv("73.txt", index=None)
