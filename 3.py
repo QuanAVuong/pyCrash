@@ -281,3 +281,17 @@ import requests
 
 response = requests.get("http://www.pythonhow.com/data/universe.txt")
 print(response.text)
+
+
+# 71 Count the number of "a" characters in this text file: http://www.pythonhow.com/data/universe.txt
+
+# Expected output: 
+# 47
+
+import requests
+
+response = requests.get("http://www.pythonhow.com/data/universe.txt")
+# a_count = []
+# [ a_count.append(letter) for letter in response.text if letter == "a" ]
+# print(len(a_count))
+print(response.text.count("a"))     # using str.count()
