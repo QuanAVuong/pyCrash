@@ -255,3 +255,17 @@ def engToPor3():
     print(f"{word} is {d[word]} in Portuguese" if word in d else "Error: not found.")
 
 engToPor3()
+
+
+# 69 Create an empty file. Paste the following code in the file (manually):
+
+import requests
+
+r = requests.get("http://www.pythonhow.com")
+print(r.text[:100])
+# Executing the script will throw an error. Please fix that error so that you get the expected output and explain why the error happened.
+
+# Expected output: 
+# <!DOCTYPE html>
+# <!--[if IE 7]>
+# <html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
