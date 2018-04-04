@@ -333,3 +333,14 @@ df1 = p.read_csv("74.txt")
 df2 = p.read_csv("73.txt")
 df_12 = p.concat([df1, df2])
 df_12.to_csv("74-concat.txt", index=None)
+
+
+# 75 Please plot the data of 74.txt into a graph of x and y axis.
+import pandas
+
+# Someone had the idea of combining both the PyPlot and NumPy namespaces into a single one (to avoid having to import two namespaces), the result is PyLab.
+from matplotlib import pylab        # => matplotlib.pyplot + Numpy
+
+df = pandas.read_csv("74-concat.txt")      # pandas.read_csv: Read CSV (comma-separated) file into DataFrame
+df.plot(x="x", y="y", kind="kde")     # pandas.DataFrame.plot: Make plots of DataFrame using matplotlib / pylab.
+pylab.show()        # matplotlib.pyplot.show: Display a figure.
