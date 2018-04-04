@@ -344,3 +344,17 @@ from matplotlib import pylab        # => matplotlib.pyplot + Numpy
 df = pandas.read_csv("74-concat.txt")      # pandas.read_csv: Read CSV (comma-separated) file into DataFrame
 df.plot(x="x", y="y", kind="kde")     # pandas.DataFrame.plot: Make plots of DataFrame using matplotlib / pylab.
 pylab.show()        # matplotlib.pyplot.show: Display a figure.
+
+
+# Bokeh is an interactive visualization library that targets modern web browsers for presentation. 
+# https://bokeh.pydata.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
+from bokeh.plotting import figure
+from bokeh.io import output_file, show
+import pandas
+
+output_file("75_bokehPlot.html")        # output to static HTML file
+df = pandas.read_csv("74-concat.txt")
+f = figure(title="Bokeh Example", x_axis_label="x", y_axis_label="y")        # create a new plot with a title and axis labels
+f.circle(x=df["x"], y=df["y"], legend="Num", line_width=10)        # add a line renderer with legend and line thickness
+
+show(f)     # show result
