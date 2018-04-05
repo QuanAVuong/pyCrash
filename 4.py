@@ -21,4 +21,9 @@ print(datetime.datetime.now())
 
 # Expected output: 
 # You were born back in 1988
+from datetime import datetime
+
+age = int(input("Please enter your age: "))
+yob = datetime.now().year - age
+print(f"You were born around {yob}")
 
