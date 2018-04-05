@@ -27,3 +27,16 @@ age = int(input("Please enter your age: "))
 yob = datetime.now().year - age
 print(f"You were born around {yob}")
 
+
+#  78 Create a program that generates a password of 6 random alphanumeric characters / words.
+# random — Generate pseudo-random numbers
+# Source code: Lib/random.py
+# This module implements pseudo-random number generators for various distributions.
+import random 
+
+population = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+population2 = ["mot", "ghost", "rand", "leap", "born", "roll", "!@#$%^&*()?", "United", "toilet", "tea", "cheese"]
+# random.sample(population, k): Return a k length list of unique elements chosen from the population sequence or set. Used for random sampling without replacement.
+sample = random.sample(population2, 6)
+password = " ".join(sample)
+print(password)
