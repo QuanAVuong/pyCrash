@@ -40,3 +40,21 @@ population2 = ["mot", "ghost", "rand", "leap", "born", "roll", "!@#$%^&*()?", "U
 sample = random.sample(population2, 6)
 password = " ".join(sample)
 print(password)
+
+
+# 79 Create a program asks the user to enter a new password and check that the submitted password should contain at least one number, one uppercase letter and at least 5 characters. If the conditions are generated, print out "Password is fine", otherwise keep prompting the user for a password.
+
+conditionsMet = False
+
+while conditionsMet != True:
+  password = input("Entered password must contain >= 1 number, 1 uppercase, >= 8 char:\n")
+  
+  if all( char.isdigit() == False for char in password ):
+    print("Does not meet the number condition")
+  elif all(char.isupper() == False for char in password):
+    print("Does not meet the uppercase condition")
+  elif len(password) < 5:
+    print("Does not meet the length condition")
+  else:
+    print("Your password passed the security check")
+    conditionsMet = True
