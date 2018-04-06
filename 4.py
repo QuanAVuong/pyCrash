@@ -58,3 +58,23 @@ while conditionsMet != True:
   else:
     print("Your password passed the security check")
     conditionsMet = True
+
+
+
+# 80 Create a program asks the user to enter a new password and check that the submitted password should contain at least one number, one uppercase letter and at least 5 characters. If the conditions are generated, print out the reason why pointing to the specific condition/s that has not been satisfied.
+while True:
+  errors = []
+  password = input("Entered password must contain >= 1 number, 1 uppercase, >= 8 char:\n")
+  
+  if all( char.isdigit() == False for char in password ):
+    errors.append("No numbers.")
+  if not any(char.isupper() == True for char in password):
+    errors.append("No upppercase letters.")
+  if len(password) < 8:
+    errors.append("Less than 8 characters")
+  if len(errors) == 0:
+    print("Your password passed the security check")
+    break
+  else:
+    # print(f"Errors found: {len(errors)}")
+    [print(f"Error {index+1}: {value}") for index, value in enumerate(errors)]
