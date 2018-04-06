@@ -23,3 +23,18 @@ for x, p in zip(x, p):
     print(f"{x} * {p} = {x*p} + ")
     e += x*p     
 print(f"Expected Value: {e}")
+
+
+# 3 Find standard deviation given mean and pdf
+from math import sqrt 
+pdf = {
+    200: .999,
+    -99800: .001,
+}
+
+e = 100
+variance = 0
+
+for rv, p in pdf.items():
+    variance += (rv - e)**2 * p
+print(sqrt(variance))
