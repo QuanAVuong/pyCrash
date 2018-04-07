@@ -131,3 +131,26 @@ from screeninfo import get_monitors
 print(f"You have {len(get_monitors())} monitors with the following resolutions:\n",
 			f"monitor 1: {get_monitors()[0].width} width x {get_monitors()[0].height} height\n",
 			f"monitor 2: {get_monitors()[1].width} width x {get_monitors()[1].height} height ")
+
+
+# 84 Create a Helo World GUI
+# pyglet provides an object-oriented programming interface for developing games and other visually-rich applications for Windows, Mac OS X and Linux.
+# http://pythonhosted.org/pyglet/programming_guide/index.html
+# pip install --force-reintstall pyglet==1.4.0a1
+import pyglet
+window = pyglet.window.Window()		# Create a Window by calling its default constructor. 
+label = pyglet.text.Label("Hello World",				# To display the text, we'll create a Label.
+				font_name="Helvetica",									# Keyword arguments are used to set the font
+				font_size=72,														 
+				x=window.width//2, y=window.height//2,	# position
+				anchor_x="center", anchor_y="center")		# and anchorage of the label
+
+# An on_draw event is dispatched to the window to give it a chance to redraw its contents.
+# pyglet provides several ways to attach event handlers to objects; a simple way is to use a decorator:
+# https://stackoverflow.com/questions/6392739/what-does-the-at-symbol-do-in-python
+@window.event
+def on_draw():		# basically on_draw will be passed to window.event: on_draw() = window.event( on_draw )
+	window.clear()
+	label.draw()
+
+pyglet.app.run()
