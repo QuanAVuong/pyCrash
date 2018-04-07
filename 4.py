@@ -78,3 +78,31 @@ while True:
   else:
     # print(f"Errors found: {len(errors)}")
     [print(f"Error {index+1}: {value}") for index, value in enumerate(errors)]
+
+
+
+# 81 Ask users to create an account with a username and password. If username already exists in 81-users.txt, create a new one.
+while True:
+	username = input("Please choose a non-existing username: ")
+	with open("81-users.txt", "r") as file:
+	  lUsers = file.read().splitlines()
+	if username not in lUsers:
+		break
+	else:
+		print("Entered username already exists.")
+
+while True:
+	errors = []
+	password = input("\nPlease create a valid password.\nEntered password must contain >= 1 number, 1 uppercase, >= 8 char: ")
+
+	if all( char.isdigit() == False for char in password ):
+		errors.append("No numbers.")
+	if not any(char.isupper() == True for char in password):
+		errors.append("No upppercase letters.")
+	if len(password) < 8:
+		errors.append("Less than 8 characters")
+	if len(errors) == 0:
+		print(f"\nYour new username and password is:\nusername: {username}\npassword: {password}")
+		break
+	else:
+		[print(f"Error {index+1}: {value}") for index, value in enumerate(errors)]
