@@ -120,3 +120,14 @@ jupiter.compute("1230/1/1")
 distance_in_au = jupiter.sun_distance
 distance_in_km = distance_in_au * 149597870.691
 print(distance_in_km)
+
+
+# 83 Write a script that detects and prints out your monitor resolution.
+
+# Expected output: 
+# Width: 1920,  Height: 1080
+from screeninfo import get_monitors
+
+print(f"You have {len(get_monitors())} monitors with the following resolutions:\n",
+			f"monitor 1: {get_monitors()[0].width} width x {get_monitors()[0].height} height\n",
+			f"monitor 2: {get_monitors()[1].width} width x {get_monitors()[1].height} height ")
