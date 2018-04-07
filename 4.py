@@ -154,3 +154,26 @@ def on_draw():		# basically on_draw will be passed to window.event: on_draw() = 
 	label.draw()
 
 pyglet.app.run()
+
+
+
+# 85 The file 85-countries-raw.txt contains the list of country names, but it also contains some unnecessary text among the countries. 
+# Please clean the list with Python by generating a new text file that contains a flawless list of country names without any other text or break lines in it. The new file content should look like in the expected output.
+
+# Expected output: 
+# Afghanistan
+# Albania
+# Algeria
+# ...
+
+with open("85-countries-raw.txt", "r") as file:
+	lCountries = file.readlines()
+
+lCountries = [ i.strip("\n") for i in lCountries if "\n" in i ]		# removing all '\n' instances
+lCountries = [ i for i in lCountries if i != "" ]		# removing empty strings
+lCountries = [ i for i in lCountries if i != "Top of Page" ]		# removing "Top of Page" instances
+lCountries = [ i for i in lCountries if len(i) != 1 ]		# removing alphabetical section eg A, B, C instances
+
+with open("85-countries-clean.txt", "w") as file:
+	for i in lCountries:
+		file.write( i + "\n" )
