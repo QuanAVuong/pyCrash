@@ -106,3 +106,17 @@ while True:
 		break
 	else:
 		[print(f"Error {index+1}: {value}") for index, value in enumerate(errors)]
+
+
+# 82 Use Python to calculate the distance in kilometers between Jupiter and Sun on January 1, 1230. 
+
+# Expected output: 
+# 758085657.5026425
+
+# ephem 3.7.6.0: Compute positions of the planets and stars
+import ephem 
+jupiter = ephem.Jupiter()
+jupiter.compute("1230/1/1")
+distance_in_au = jupiter.sun_distance
+distance_in_km = distance_in_au * 149597870.691
+print(distance_in_km)
