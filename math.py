@@ -65,9 +65,10 @@ def normalCdf(lower=truncnorm.a, upper=truncnorm.b, mean=0, sd=1):
 	xmin, xmax = plt.xlim()
 	ymin, ymax = plt.ylim()
 
-	plt.annotate(f"CDF= {truncdf}", xy=(upper, .5*ymax), xytext=(upper + (xmax - xmin)/4, .75*ymax),
+	plt.annotate(f"CDF= {truncdf}", xy=(upper if xmin < upper < xmax else lower, .25*ymax),		# head
+								xytext=(upper + (xmax - xmin)/10 if xmin < upper < xmax else lower - (xmax - xmin)/4, .75*ymax),		# tail
 								arrowprops=dict(facecolor="red", shrink=0.05, connectionstyle="angle3") )
 
 	plt.show()
 
-normalCdf(-999999, 0, 8, 10)
+normalCdf(15, 99999, 0, 12.728)
