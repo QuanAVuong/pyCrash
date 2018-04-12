@@ -72,3 +72,12 @@ def normalCdf(lower=truncnorm.a, upper=truncnorm.b, mean=0, sd=1):
 	plt.show()
 
 normalCdf(15, 99999, 0, 12.728)
+
+
+# 5 Calculate z-score
+def z_score(x, mean, sd):
+	print(f"Given a normal distribution with:\n\
+		mean = {mean},\
+		standard deviation = {sd}\n\
+		A value of x = {x} would have a z-score = {( x - mean ) / sd}")
+z_score(32.2, 20.5, 3.9)
