@@ -177,3 +177,19 @@ lCountries = [ i for i in lCountries if len(i) != 1 ]		# removing alphabetical s
 with open("85-countries-clean.txt", "w") as file:
 	for i in lCountries:
 		file.write( i + "\n" )
+
+
+
+# 86 Please take a look at the following list:
+# One of the items is not a country. Please use Python and 85-countries-clean.txt as data source to filter out the checklist  of non-country items. Once you have filtered out checklist , then print it out.
+
+checklist = ["Portugal", "Germany", "Munster", "Spain", "Saint Lucia", "Yemengg", "Bulgarian"]
+
+# Expected output: 
+# ['Portugal', 'Germany', 'Spain', 'Saint Lucia']
+
+with open("85-countries-clean.txt", "r") as file:
+	lCountries = file.readlines()
+	lCountries_clean = [ country.rstrip("\n") for country in lCountries ]
+	filtered = [ i for i in checklist if i in lCountries_clean ]
+	print(filtered)
