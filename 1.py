@@ -5,10 +5,10 @@ a = 6
 print(a + a + a) # => 18
 
 # 2
-a = 1
-_a = 2
+a   = 1
+_a  = 2
 _a2 = 3
-2a = 4 # variables' names cannot start with a number
+2a  = 4 # variables' names cannot start with a number
 
 # 3
 a = 1
@@ -19,7 +19,7 @@ print(b == c) # => NameError: name 'c' is not defined
 # 4.
 a = "1"
 b = 2
-# print(a + b) # TypeError: must be str, not int  
+# print(a + b) # TypeError: must be str, not int
 print(int(a) + b) 
 
 # 5
@@ -33,7 +33,7 @@ print(letters[1])
 
 
 # 6
-# Question: Please complete the script so that it prints out a list slice containing items d , e , and f .
+# Question: Please complete the script so that it prints out a list slice containing items d, e, and f .
 
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 # Expected output: 
@@ -59,12 +59,12 @@ print(letters[-2])
 # 9 Question: Complete the script so that it prints out a list slice containing the last three items of list letters .
 
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
-# Expected output:
+# Expected output: 
 
 # ['h', 'i', 'j'] 
 print(letters[-3:])
 
-# 10 Question: Complete the script so that it prints out a list slice containing letters a, c, e, g, and i. 
+# 10 Question: Complete the script so that it prints out a list slice containing letters a, c, e, g, and i.
 # 2 points
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 # Expected output: 
@@ -78,7 +78,7 @@ print(list(range(1, 21)))
 # 12 Complete the script so that it produces the expected output. Please use my_range  as input data.
 
 my_range = range(1, 21)
-#  Expected output: 
+# Expected output: 
 
 # [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200] 
 print([10 * num for num in my_range ])
@@ -87,7 +87,7 @@ print([10 * num for num in my_range ])
 # 13 Complete the script so it generates the expected output using my_range  as input data. Please note that the items of the expected list output are all strings.
 
 my_range = range(1, 21)
-#  Expected output: 
+# Expected output: 
 
 # ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']  
 print([str(num) for num in my_range]) # list comprehension
@@ -105,11 +105,11 @@ a = ["1", 1, "1", 2]
 print("This list made from a set is unique but does not preserve order: " + str(list(set(a)))) # 1. order not preserved
 print("Preserving order with OrderedDict.fromkeys(a): " + str(list(OrderedDict.fromkeys(a)))) # 2.1
 
-# 2.2 Preserve order by appending another list:
+# 2.2 Preserve order by appending another list: 
 b = []
-for elem in a:
-    if elem not in b:
-        b.append(elem)
+for elem in a    : 
+  if  elem not in b: 
+          b.append(elem)
 print("Regular for => if => append" + str(b))
 
 b = []
@@ -172,7 +172,7 @@ d = {"a": 1, "b": 2, "c": 3}
 # Expected output: 
 #  6 
 s = 0
-for num in list(d.values()):
+for num in list(d.values()): 
     s += num
 print(s)
 
@@ -220,7 +220,7 @@ print(d["b"][2])
 from pprint import pprint
 d = dict(a = list(range(1, 11)), b = list(range(11, 21)), c = list(range(21, 31)))
 
-# for key in d:
+# for key in d: 
 #     pprint(key + " has value " + str(d[key]))
 # pprint(d)
 

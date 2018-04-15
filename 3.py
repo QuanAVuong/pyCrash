@@ -7,10 +7,10 @@ print(type("Hey".replace("ey","i")[-1]))
 
 # 52 The code is supposed to ask the user to enter their name and surname and then it prints out those user submitted values. Instead, the code throws a TypeError. Please fix it so that the expected output is printed out.
 
-firstname = input("Enter first name: ")
+firstname  = input("Enter first name: ")
 secondname = input("Enter second name: ")
 # print("Your first name is %s and your second name is %s" % firstname, secondname) # TypeError: not enough arguments for format string
-# Expected output: 
+# Expected output                                                                              : 
 # Your first name is John and your second name is Smith 
 print("Your first name is %s and your second name is %s" % (firstname, secondname)) # tuple expected after %
 
@@ -76,7 +76,7 @@ d = {"employees":[{"firstName": "John", "lastName": "Doe"},
 "owners":[{"firstName": "Jack", "lastName": "Petter"},
           {"firstName": "Jessy", "lastName": "Petter"}]}
 
-with open("56.json", "w") as file:
+with open("56.json", "w") as file: 
     json.dump(d, file, indent=4, sort_keys=True)
 
 
@@ -84,9 +84,9 @@ with open("56.json", "w") as file:
 import json
 from pprint import pprint # sometimes import <moduleName> alone won't work
 
-with open("56.json", "r") as file:
-    # pprint(json.load(file))       # TypeError: 'module' object is not callable
-    # pprint(json.loads(file.read())) # TypeError: 'module' object is not callable
+with open("56.json", "r") as file               : 
+#    pprint(json.load(file))       # TypeError  : 'module' object is not callable
+#    pprint(json.loads(file.read())) # TypeError: 'module' object is not callable
     d = json.loads(file.read())     # json.loads() gets a string as output and creates a dictionary object out of that.
 
 pprint(d)
@@ -95,11 +95,11 @@ pprint(d)
 # 58 add a new employee to the content of "56.json"
 import json
 
-with open("56.json", "r+") as file:     # "+" write mode
-    d = json.loads(file.read())         # 
+with open("56.json", "r+") as file: # "+" write mode
+    d = json.loads(file.read())         #
     d["employees"].append({
         "firstName": "Albert",
-        "lastName": "Bert"})
+        "lastName" : "Bert"})
     file.seek(0)        # move cursor to start of file
     json.dump(d, file, indent=4, sort_keys=True)
     file.truncate()     # delete everything after current cursor position (end of dumped dictionary)
@@ -107,20 +107,20 @@ with open("56.json", "r+") as file:     # "+" write mode
 
 # 59 Please complete the code so that it prints out the expected output.
 
-a = [1, 2, 3] 
+a = [1, 2, 3]
 
 # Expected output: 
 # Item 1 has index 0
 # Item 2 has index 1
 # Item 3 has index 2
 
-for index, value in list(enumerate(a)) :
+for index, value in list(enumerate(a)): 
     print("Item %s has index %s" % (value, index))
 
 
 
 # 60 Prints hello repeatedly, non-stop
-while True:
+while True: 
     print("Hello")
 
 
@@ -137,7 +137,7 @@ while True:
 # ...
 import time
 
-while True:
+while True: 
     print("Hello")
     time.sleep(2)
 
@@ -155,7 +155,7 @@ while True:
 # ...
 import time
 timer = 0
-while True:
+while True: 
     print("Hello")
     timer += 1
     print(timer)
@@ -171,7 +171,7 @@ while True:
 # Hello
 # End of Loop
 import time
-timer = 1
+timer   = 1
 while timer <= 3:
     print("Printing 'Hello' after {0} {1}: Hello ".format(timer, "second" if timer <= 1 else "seconds"))
     timer += 1
@@ -183,9 +183,9 @@ print("End of the Loop")
 # 64 The following code prints Hello, checks if 2 is greater than 1 and then breaks the loop because 2 is actually greater than 1. Therefore Hi is not printed out. Please replace break with something else so that Hello and Hi are printed out repeatedly.
 import time
 
-while True:
+while True: 
     print("First statement")
-    if 2 > 1:
+    if 2 > 1: 
         # break     # break out of the loop
         # pass
         "do something"
@@ -196,10 +196,10 @@ while True:
 # 65 The following code prints Hello, checks if 2 is greater than 1 and then breaks the loop because 2 is actually greater than 1. Therefore Hi is not printed out. Please replace break with something else so that Hello is printed out repeatedly and Hi is never printed.
 import time
 
-while True:
+while True: 
     print("First statement")
     time.sleep(1)
-    if 2 > 1:
+    if 2 > 1: 
         # break         # break out of the loop
         # pass          # pass on to the next line
         continue        # continue continues with the beginning of the loop, opposite of break
@@ -209,15 +209,15 @@ while True:
 # 66 Create an English to Portuguese translation program.
 # The program takes a word from the user as input and translates it using the following dictionary as a vocabulary source.
 
-d = dict(weather = "clima", earth = "terra", rain = "chuva") 
+d = dict(weather = "clima", earth = "terra", rain = "chuva")
 
 # Expected output: 
-# Enter word: earth
+# Enter word     : earth
 # terra
-def engToPor():
+def engToPor(): 
     word = input("What word from our dictionary would you like to be translated:")
     # print("{} means ".format(word) + {value for key, value in d.items() if key == word})      # => earth means {'terra'}
-    { print("{} is ".format(word) + value) for key, value in d.items() if key == word }        # => earth means terra
+    { print("{} is ".format(word) + value) for key, value in d.items() if key == word }         # => earth means terra
 
 engToPor()
 
@@ -225,16 +225,16 @@ engToPor()
 # 67 Create an English to Portuguese translation program.
 # The program takes a word from the user as input and translates it using the following dictionary as a vocabulary source. In addition, try to return the message "We couldn't find that word!" when the user enters a word that is not in the dictionary.
 
-d = dict(weather = "clima", earth = "terra", rain = "chuva") 
+d = dict(weather = "clima", earth = "terra", rain = "chuva")
 
 # Expected output: 
 
 # Enter word: hello
 # We couldn't find that word!
-def engToPor2():
+def engToPor2(): 
     word = input("Please enter an english word to be translated to portuguese: ")
     # { print("{} is {} in Portuguese".format(word, value)) if key == word else print("We couldn't find that word!") for key, value in d.items() if key == word }     # else clause won't run as key == word already always true
-    # { print("{} is {} in Portuguese".format(word, value)) if key == word else print("We couldn't find that word!") for key, value in d.items()}     # => will run true/false statements for ALL key,value pairs
+    # { print("{} is {} in Portuguese".format(word, value)) if key == word else print("We couldn't find that word!") for key, value in d.items()}     # => will run true/false statements for ALL key, value pairs
 
     # non-comprehension / ternary cleaner
     print(f"{word} is {d[word]} in Portuguese" if word in d else raise ValidationError(f"{word} not found."))       # => invalid syntax raise raises an exception which is a statement, not an expression that returns a value
@@ -244,20 +244,20 @@ engToPor2()
 
 # 68 Also, make the program non case-sensitive meaning that for example, both earth and Earth should return the translation correctly for that word.
 
-d = dict(weather = "clima", earth = "terra", rain = "chuva") 
+d = dict(weather = "clima", earth = "terra", rain = "chuva")
 
 # Expected output: 
-# Enter word: hello
+# Enter word     : hello
 # We couldn't find that word!
 
-def engToPor3():
+def engToPor3(): 
     word = input("Enter English word (case-insensitive): ").lower()
     print(f"{word} is {d[word]} in Portuguese" if word in d else "Error: not found.")
 
 engToPor3()
 
 
-# 69 Create an empty file. Paste the following code in the file (manually):
+# 69 Create an empty file. Paste the following code in the file (manually): 
 
 import requests
 
@@ -268,12 +268,12 @@ print(r.text[:100])
 # Expected output: 
 # <!DOCTYPE html>
 # <!--[if IE 7]>
-# <html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+# <html class = "ie ie7" lang = "en-US" prefix = "og: http://ogp.me/ns#">
 
 
 # 70 
-# Print out the text of this file http://www.pythonhow.com/data/universe.txt. Please don't manually download the file. Let Python do all the work.
-# Expected output: 
+# Print out the text of this file http: //www.pythonhow.com/data/universe.txt. Please don't manually download the file. Let Python do all the work.
+# Expected output                     : 
 # Distant regions of space are assumed to exist and to be part of reality as much as we are, even though we can never
 # interact with them... Typically, the observable universe is taken to mean the portion of the Universe that
 # is observable from our vantage point in the Milky Way.
@@ -283,7 +283,7 @@ response = requests.get("http://www.pythonhow.com/data/universe.txt")
 print(response.text)
 
 
-# 71 Count the number of "a" characters in this text file: http://www.pythonhow.com/data/universe.txt
+# 71 Count the number of "a" characters in this text file: http: //www.pythonhow.com/data/universe.txt
 
 # Expected output: 
 # 47
@@ -291,7 +291,7 @@ print(response.text)
 import requests
 
 response = requests.get("http://www.pythonhow.com/data/universe.txt")
-# a_count = []
+# a_count  = []
 # [ a_count.append(letter) for letter in response.text if letter == "a" ]
 # print(len(a_count))
 print(response.text.count("a"))     # using str.count()
@@ -301,13 +301,13 @@ print(response.text.count("a"))     # using str.count()
 import webbrowser
 
 search_query = input("Please enter your search term(s): ")
-url = f"https://encrypted.google.com/search?hl=en&q={search_query}"
+url          = f"https://encrypted.google.com/search?hl=en&q={search_query}"
 webbrowser.open(url, new=2, autoraise=True)
 
 
-# 73 Create a script that reads http://www.pythonhow.com/data/sampledata.txt file, multiplies its values by two and saves the output in a new text file.
+# 73 Create a script that reads http: //www.pythonhow.com/data/sampledata.txt file, multiplies its values by two and saves the output in a new text file.
 import pandas
-data = pandas.read_csv("http://www.pythonhow.com/data/sampledata.txt")
+data    = pandas.read_csv("http://www.pythonhow.com/data/sampledata.txt")
 data_x2 = data * 2
 data_x2.to_csv("73.txt", index=None)
 
@@ -329,8 +329,8 @@ data_x2.to_csv("73.txt", index=None)
 
 import pandas as p
 
-df1 = p.read_csv("74.txt")
-df2 = p.read_csv("73.txt")
+df1   = p.read_csv("74.txt")
+df2   = p.read_csv("73.txt")
 df_12 = p.concat([df1, df2])
 df_12.to_csv("74-concat.txt", index=None)
 
@@ -341,20 +341,20 @@ import pandas
 # Someone had the idea of combining both the PyPlot and NumPy namespaces into a single one (to avoid having to import two namespaces), the result is PyLab.
 from matplotlib import pylab        # => matplotlib.pyplot + Numpy
 
-df = pandas.read_csv("74-concat.txt")      # pandas.read_csv: Read CSV (comma-separated) file into DataFrame
-df.plot(x="x", y="y", kind="kde")     # pandas.DataFrame.plot: Make plots of DataFrame using matplotlib / pylab.
-pylab.show()        # matplotlib.pyplot.show: Display a figure.
+df = pandas.read_csv("74-concat.txt")     # pandas.read_csv() Read CSV (comma-separated) file into DataFrame
+df.plot(x="x", y="y", kind="kde")         # pandas.DataFrame.plot() Make plots of DataFrame using matplotlib / pylab.
+pylab.show()                              # matplotlib.pyplot.show() Display a figure.
 
 
 # Bokeh is an interactive visualization library that targets modern web browsers for presentation. 
-# https://bokeh.pydata.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
+# https: //bokeh.pydata.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
 import pandas
 
-output_file("75_bokehPlot.html")        # output to static HTML file
+output_file("75_bokehPlot.html")                                        # output to static HTML file
 df = pandas.read_csv("74-concat.txt")
-f = figure(title="Bokeh Example", x_axis_label="x", y_axis_label="y")        # create a new plot with a title and axis labels
-f.circle(x=df["x"], y=df["y"], legend="Num", line_width=10)        # add a line renderer with legend and line thickness
+f  = figure(title="Bokeh Example", x_axis_label="x", y_axis_label="y")  # create a new plot with a title and axis labels
+f.circle(x=df["x"], y=df["y"], legend="Num", line_width=10)             # add a line renderer with legend and line thickness
 
-show(f)     # show result
+show(f)                                                                 # show result
