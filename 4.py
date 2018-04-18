@@ -193,3 +193,17 @@ with open("85-countries-clean.txt", "r") as file:
 	lCountries_clean = [ country.rstrip("\n") for country in lCountries ]
 	filtered = [ i for i in checklist if i in lCountries_clean ]
 	print(filtered)
+
+
+# 87 Add the missing item to the file
+checklist = ["Portugal", "Germany", "Spain"]
+checklist = [i + "\n" for i in checklist]
+
+with open("87-missing.txt", "r") as file:
+  lMissing = file.readlines()
+
+lFixed = sorted(checklist + lMissing)
+
+with open("87-fixed.txt", "w") as file:
+  for i in lFixed:
+    file.write(i)
